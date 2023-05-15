@@ -75,13 +75,14 @@ G) :- Open your browser and navigate to http://localhost:3000.
 # Screenshots of the Project
 
 ### First Page of Project
-![Screenshot (225)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/dd17bbba-db31-4b43-b00a-6feea710677c)
+![Screenshot (225)](https://github.com/Ujjwal7017/Terriby_Tiny_Tales/assets/73957886/c430cec4-3f69-4711-9ff9-cde7ba182ea3)
+
 
 ### After clicking on Submit Button
-![Screenshot (226)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/d245f0c3-bd82-4fc6-b333-6515b2fe90da)
+![Screenshot (226)](https://github.com/Ujjwal7017/Terriby_Tiny_Tales/assets/73957886/1605218a-e971-441c-a2ea-f60e20d33e72)
 
 ### After clicking on Export button
-![Screenshot (227)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/253b6fb4-54bb-48df-84f1-c6291c874af7)
+![Screenshot (227)](https://github.com/Ujjwal7017/Terriby_Tiny_Tales/assets/73957886/044c615d-0db5-4399-a825-0d64e147e550)
 
 # Host Link
 Host Link:- https://646216052f439100a8fb665a--thunderous-platypus-29584f.netlify.app/
