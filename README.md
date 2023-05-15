@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Word Frequency Histogram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that generates a histogram representing the frequency of the top 20 most occurring words in a excel file. It uses the PapaParse library for CSV parsing and the Chart.js library for data visualization.
 
-## Available Scripts
+# Getting Started
 
-In the project directory, you can run:
+Step 1:- For creating a react.js app -> "npx create-react-app terriblytinytales" after that "cd terriblytinytales" then "npm start".
 
-### `npm start`
+## Usage
+1) Click the "Submit" button to fetch the text file containing the data.<br>
+2) The application will process the text and generate a histogram showing the frequency of the top 20 most occurring words.<br>
+3) You can hover over the bars in the histogram to view the exact frequency of each word.<br>
+4) Click the "Export" button to download the histogram data as a CSV file.<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependecies
+The project uses the following dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1) React: A JavaScript library for building user interfaces.<br>
+2) PapaParse: A library for parsing CSV data.<br>
+3) Chart.js: A data visualization library for creating charts.<br>
 
-### `npm test`
+## Folder Structure
+The project structure is organized as follows:<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1) src: Contains the source code files.<br>
+2) App.js: The main component that fetches and processes the data, and renders the histogram.<br>
+3) App.css: The CSS styles for the application.<br>
+4) index.js: The entry point of the application.<br>
+5) public: Contains the public assets.<br>
+6) index.html: The HTML template for the application.<br>
 
-### `npm run build`
+# Explaination of the components of the code 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ A) :-In the App.js file I have imported the neccessary modules :
+1) useState from react is imported to manage component state.<br>
+2) Papa is imported from papaparse for CSV parsing.<br>
+3) Bar is imported from react-chartjs-2 for rendering the bar chart.<br>
+4) ChartJS, CategoryScale, LinearScale, BarElement, and Title are imported from chart.js to customize and register chart elements.<br>
+       
+B) :- Defined the functional component App:<br>
+1) State variables are declared using the useState hook<br>
+2) data: Stores the data for the bar chart.<br>
+3) show: Controls the display of the histogram section.<br>
+4) loading: Indicates if the data is being loaded.<br>
+            
+C) :- An options object is defined to configure the chart's appearance.<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+D) :- The fetchData function is declared as an asynchronous function.<br>
+1) It sets the loading state to true to show the loading message.<br>
+2) It fetches the data from the URL 'https://www.terriblytinytales.com/test.txt' using fetch and converts the response to text format.<br>
+3) The text is processed to extract words by converting to lowercase, removing punctuation, splitting by whitespace, and filtering out empty words.<br>
+4) The frequency of each word is counted and stored in the counts object.<br>
+5) The words are sorted based on frequency in descending order.<br>
+6) The top 20 words and their frequencies are extracted.<br>
+7) The data for the chart is formatted as an object with labels and datasets.<br>
+8) The formatted data is stored in the data state.<br>
+9) The show state is set to false to display the histogram section.<br>
+10) The loading state is set to false to hide the loading message.<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+E) :- The exportData function is declared to handle the export functionality.<br>
+1) It converts the data object to CSV format using Papa.unparse.<br>
+2) It creates a Blob from the CSV data.<br>
+3) It generates a URL for the Blob and creates a temporary anchor element to trigger the file download.<br>
+4) The anchor element is appended to the document body, clicked programmatically, and then removed from the document.<br>
 
-### `npm run eject`
+F) :- The component's JSX code defines the structure and layout of the application.<br>
+1) The main container div has the class name 'main'.<br>
+2) The submit button is rendered with a click event handler to fetch the data and a disabled state based on the loading variable.<br>
+3) The histogram section is rendered when data is not null.<br>
+4) The histogram contains a chart div with a title, the Bar component to display the chart using the data and options variables, and an export button with a click event handler to export the data.<br>
+5) The component returns the JSX code inside the main container div.<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+G) :- Open your browser and navigate to http://localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Screenshots of the Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### First Page of Project
+![Screenshot (225)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/dd17bbba-db31-4b43-b00a-6feea710677c)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### After clicking on Submit Button
+![Screenshot (226)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/d245f0c3-bd82-4fc6-b333-6515b2fe90da)
 
-## Learn More
+### After clicking on Export button
+![Screenshot (227)](https://github.com/Ujjwal7017/Terribly-Tiny-Tales/assets/73957886/253b6fb4-54bb-48df-84f1-c6291c874af7)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Host Link
+Host Link:- https://646216052f439100a8fb665a--thunderous-platypus-29584f.netlify.app/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
